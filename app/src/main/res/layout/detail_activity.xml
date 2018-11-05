@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/bar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@drawable/pllogo">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/colorPrimaryDark"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
+            app:toolbarId="@id/toolbar">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                android:layout_gravity="bottom"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+                <ImageView
+                    android:id="@+id/logoTuanRumah"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="fitStart"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_launcher_background" />
+
+                <TextView
+                    android:id="@+id/skorTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    tools:text="00"/>
+
+                <ImageView
+                    android:id="@+id/logoTamu"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@drawable/ic_launcher_background" />
+
+                <TextView
+                    android:id="@+id/tglTvTollbar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="5dp"
+                    tools:text="00"/>
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <TextView
+        android:id="@+id/tglTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textColor="#000"
+        android:textSize="14dp"
+        app:layout_anchor="@id/bar"
+        app:layout_anchorGravity="center_horizontal"
+        tools:text="Minggu, 4 oktober 2018" />
+
+
+    <!-- Tim Tuan Rumah widget -->
+    <TextView
+        android:id="@+id/namaTuanRumah"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        app:layout_anchor="@id/toolbar"
+        app:layout_anchorGravity="top"
+        android:layout_gravity="top"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        tools:text="Tim Tuan Rumah"
+        android:textColorHighlight="@color/huruf"/>
+
+    <ImageView
+        android:id="@+id/LogoTimTuanRumah"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_anchor="@id/namaTuanRumah"
+        app:layout_anchorGravity="top|center_horizontal"
+        android:layout_gravity="top|center_horizontal"
+        android:fitsSystemWindows="true"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_launcher_background"
+         />
+    <!-- Batas Tim Tuan rumah -->
+
+    <TextView
+        android:id="@+id/skorTv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000"
+        android:textSize="36dp"
+        android:textColorLink="@color/huruf"
+        app:layout_anchor="@id/bar"
+        app:layout_anchorGravity="center"
+        tools:text="00 - 00" />
+
+    <!-- Mulai widget tim tamu -->
+    <TextView
+        android:id="@+id/namaTimTamu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        app:layout_anchor="@id/toolbar"
+        app:layout_anchorGravity="top|right"
+        android:layout_gravity="top"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:textStyle="bold"
+        tools:text="Tim Tamu"/>
+
+    <ImageView
+        android:id="@+id/logoTimTamu"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_anchor="@id/namaTimTamu"
+        app:layout_anchorGravity="top|center_horizontal"
+        android:layout_gravity="top|center_horizontal"
+        android:fitsSystemWindows="true"
+        android:scaleType="fitEnd"
+        android:src="@drawable/ic_launcher_background"
+        />
+
+    <!-- batas widget tim tamu -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- formasi tim -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/formasiTv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="5dp"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/formasiTimTamu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="5dp"
+                        android:textAlignment="center"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+
+                </LinearLayout>
+
+                <!-- gol -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/golTuanRumah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="@string/label_goals"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/golTamu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textSize="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+                </LinearLayout>
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/textView1"
+                    android:layout_marginTop="20dp"
+                    android:background="#c0c0c0" />
+
+                <!-- shot -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/shotTuanRumah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="@string/label_shots"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/shotTamu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:paddingVertical="5dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:textColor="#fff"
+                    android:textAlignment="center"
+                    android:text="@string/label_lineups"/>
+
+                <!-- kiper -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/kiperTuanRumah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="@string/label_goalkeeper"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/kiperTamu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:gravity="right"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+                </LinearLayout>
+                <View
+                    android:id="@+id/view1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    android:background="#c0c0c0" />
+
+                <!-- defender -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/defenderTuanRumah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="@string/label_defenders"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/defenderTamu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textSize="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+                </LinearLayout>
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    android:background="#c0c0c0" />
+
+                <!-- midfielders -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/tuanRumahMid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="@string/label_midfielders"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/tamuMid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textSize="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+                </LinearLayout>
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/textView1"
+                    android:layout_marginTop="20dp"
+                    android:background="#c0c0c0" />
+
+                <!-- striker -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/strikerTuanRumah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="@string/label_forwards"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/strikerTamu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textSize="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+                </LinearLayout>
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="fill_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/textView1"
+                    android:layout_marginTop="20dp"
+                    android:background="#c0c0c0" />
+
+                <!-- cadangan -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/cadangan1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="@string/label_substitutes"
+                        android:layout_weight="1"/>
+
+                    <TextView
+                        android:id="@+id/cadangan2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:textSize="10dp"
+                        android:lineSpacingExtra="5dp"
+                        android:layout_weight="1"
+                        tools:text="@string/sub2"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </android.support.v4.widget.NestedScrollView>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

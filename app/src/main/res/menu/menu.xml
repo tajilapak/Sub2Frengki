@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigate_prev_match"
+        android:title="Pert Sebelumnya"
+        android:icon="@drawable/sebelum"/>
+
+    <item
+        android:id="@+id/navigate_next_match"
+        android:title="Pert Selanjutnya"
+        android:icon="@drawable/selanjut"/>
+</menu>

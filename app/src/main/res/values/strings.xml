@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Sub2Frengki</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="garis">-</string>
+    <string name="label_match_detail">Match Detail</string>
+    <string name="sub2">text</string>
+    <string name="label_goals">goal</string>
+    <string name="label_shots">shot</string>
+    <string name="label_lineups">lineup</string>
+    <string name="label_goalkeeper">kiper</string>
+    <string name="label_defenders">defender</string>
+    <string name="label_midfielders">midfilder</string>
+    <string name="label_forwards">forward</string>
+    <string name="label_substitutes">substitution</string>
+</resources>
